@@ -32,3 +32,25 @@ fig_bar = px.bar(avg_closing_price_sorted , x='Ticker', y='Close',
 fig_bar.update_layout(template='plotly_white')
 plotly(fig_bar)
 text("The stock with highest closing cost is: " + avg_closing_price_sorted["Ticker"].iloc[0])
+
+
+# Create a toggle button for the average closing price summary table
+toggle_button = button(label="Toggle Average Closing Price Summary")
+
+# Initial state of the table visibility
+table_visible = False
+
+if toggle_button:
+    # Toggle the visibility state
+    table_visible = not table_visible
+
+# Display the table based on the current visibility state
+if table_visible:
+    table(avg_closing_price_sorted)
+
+
+
+
+
+
+
